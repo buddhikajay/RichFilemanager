@@ -31,7 +31,13 @@ $config = [
      * Configure Logger class
      */
     "logger" => [
-        "enabled" => true,
+        "enabled" => false,
+        /**
+         * Default value "null".
+         * Full path to log file, e.g. "/var/log/filemanager/logfile".
+         * By default the application writes logs to "filemanager.log" file that located at sys_get_temp_dir()
+         */
+        "file" => null,
     ],
     /**
      * General options section
@@ -131,6 +137,7 @@ $config = [
         "editRestrictions" => [
             "txt",
             "csv",
+            "md",
         ],
     ],
     /**
@@ -222,6 +229,7 @@ $config = [
             "wav",
             "zip",
             "rar",
+            "md",
         ],
     ],
     /**

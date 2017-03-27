@@ -1,3 +1,84 @@
+Version 2.3.0
+---------------------------
+- Java connector (Spring MVC) support, thanks @fabriceci #126;
+- Support Markdown files side-by-side interactive editing, thanks @dereks #88;
+- Custom renderers support. CodeMirror and MarkdownIt are implemented #85;
+- Capability to render index file content in folder listing mode (similar to what GitHub does) #88;
+- Capability to preview renderable files right after opening;
+- Support Java lang in renderer / editor preview #118;
+- PHP connector: added capability to define logfile path #123;
+- bugfix: remove "time" query parameter upon file selection #116;
+- bugfix: unable to retrieve absolute path, even when "previewUrl" is specified #116;
+- bugfix: issues while copying file URL; better preview mode support #120
+- bugfix: folder isn't loaded when opened from filetree and preview mode is enabled #120;
+- bugfix: logger configuration doesn't take effect in PHP connector #123;
+- bugfix: wrong position of "parent" item in IE #124;
+
+
+Version 2.2.2
+---------------------------
+- new section "filetree" in configuration file;
+- independent ajax calls for filetree and fileview #103, #104;
+- selectable supports custom scrollbar (scrolling + selection);
+- bugfix: missed custom scrollbar for preview mode;
+- bugfix: bugfix: breadcrumbs is broken if "exclusiveFolder" is set #107;
+- bugfix: close button issue on integration with CKEditor #108;
+
+
+Version 2.2.1
+---------------------------
+- breadcrumbs instead of string for the current path #96;
+- improved determining of active context during "select" action;
+- implemented postMessage communication capability on "select" action;
+- demo page new examples: simple js window, fancybox iframe, tinyMCE 4 iframe;
+- updated translations in [el] and [fr] language files;
+- bugfix: scrollbar issues #98;
+- bugfix: sorting in list view doesn't work #97;
+- bugfix: file and folder info isn't updated after the file has been modified #95;
+- bugfix: (PHP connector) images uploads are failed in case "imagesOnly" configuration option is enabled #74;
+
+
+Version 2.2.0
+---------------------------
+- clipboard feature: copy, cut, paste, clear (header panel and context menu) #80;
+- implemented "copy" action at the client-side and PHP connector (see API) to support clipboard copy feature;
+- configurable clipboard availability via `clipboard` option in json configuration file;
+- implemented context menu on items background; include clipboard "paste" and "create folder" items;
+- more flexible permissions control: attribute "protected" has been split into two: readable and writable attributes #91, #92;
+- support [.md] markdown files editing out of the box #86;
+- create new and adjust existing translations;
+- better support of define RFM context for "select" action;
+- bugfix: error on filtering inside a subfolder #89;
+- bugfix: error upon setup default theme for CodeMirror #86;
+- bugfix: text editor remains open after close preview #79;
+- bugfix: corrupted PHP S3 plugin move/copy of thumbnails if located at AWS S3 storage;
+- included "purl" library to parse urls and updated CodeMirror library;
+
+Backward incompatible changes:
+- API: attribute "protected" has been split into two: readable and writable attributes #91, #92;
+
+
+Version 2.1.0
+---------------------------
+- implemented selectable view items (mouse dragging & Ctrl key), see `manager`.`selection` config options #15, #38;
+- implemented multiple actions for selected items (move, delete, download) #11, #15, #38;
+- special drag helper while dragging multiple items:
+	* shows number items items;
+	* prevents on moving (to) protect folder or to the one of selected items;
+- provided an ability to open files/folders with mouse dblClick, see `manager`.`dblClickOpen` config option;
+- improved injection of dynamic assets (js & css) with toast plugin;
+- added "afterSelectItem" callback function #73;
+- created file to initiate RFM plugin and configure with callbacks and baseUrl #73;
+- "select" action now available without window.opener to use RFM inside custom modal windows (bootstrap, jquery dialog, etc.);
+- bugfix: scrollbar not showing on initial load #77;
+- PHP connector: bugfix comma in filename problem #78;
+- composer is added to the project #71;
+
+Backward incompatible changes:
+- JSON configuration file "filemanager.config.default.json" has been moved from "/scripts" to "/config" folder;
+- have to copy and rename "/config/filemanager.init.js.example" file, along with JSON configuration file;
+
+
 Version 2.0.3
 ---------------------------
 - added "overrideClientConfig" option in PHP connector config file, "false" by default
