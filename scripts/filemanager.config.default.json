@@ -17,7 +17,7 @@
         "charsLatinOnly": false,
         "splitterWidth": 200,
         "splitterMinWidth": 200,
-        "logger": false,
+        "logger": true,
         "capabilities": [
             "select",
             "upload",
