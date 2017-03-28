@@ -21,7 +21,7 @@ $config = [
      *
      * "s3" - AWS S3 storage plugin (PHP SDK v.3)
      */
-    "plugin" => null,
+    "plugin" => "s3",
     /**
      * Overrides client-side configuration options (in json file) with the counterparts in the current file.
      * @see LocalFilemanager::actionInitiate() for the options map
